@@ -1,0 +1,21 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fileMove": "node ./work/fileWork.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "fs-extra": "^10.1.0",
+    "mapshaper": "^0.5.118",
+    "ncp": "^2.0.0",
+    "ogr2ogr": "^3.1.1",
+    "rimraf": "^3.0.2"
+  }
+}
