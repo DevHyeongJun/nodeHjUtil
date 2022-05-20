@@ -17,6 +17,6 @@
 > __*모든 설정 config는 ./config.js에서 정의합니다.__
 
 ## 함수 설명
-```fileMoveWork(target, from);```
- - 타겟 경로의 파일들을 옴길 디렉토리로 전부 이동합니다.
-   ( c:/test => c:/test2/2022-05-20/* )
+> ```fileMoveWork(target, from);```
+> - 타겟 경로의 파일들을 옴길 디렉토리로 전부 이동합니다.
+>   ( c:/test => c:/test2/2022-05-20/* )
