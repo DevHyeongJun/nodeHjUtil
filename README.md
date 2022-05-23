@@ -18,5 +18,5 @@
 > 
 >   ( c:/test => c:/test2/2022-05-20/* )
 >   
-> - 경로는 ./config.js 내 file = {} 에서 정의
-> - watch 추가는 work/watchDirWork.js 에서 실행
+> - 경로는 ./config.js 내 file = {} 정의
+> - watch 추가는 work/watchDirWork.js 정의
