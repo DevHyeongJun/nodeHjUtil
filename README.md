@@ -16,7 +16,10 @@
 > 
 > __*모든 설정 config는 ./config.js에서 정의합니다.__
 
-## 함수 설명
-> ```fileMoveWork(target, from);```
-> - 타겟 경로의 파일들을 옴길 디렉토리로 전부 이동합니다.
+## 실행
+### 날짜 별 파일 정리
+> - 지정 폴더에 있는 파일 또는 폴더를 옴길 폴더에 날짜 별로 분류하며, 실시간으로 이동시킴.
 >   ( c:/test => c:/test2/2022-05-20/* )
+> ``` npm run watchDir ```
+> - 경로는 ./config.js 내 file = {} 에서 정의
+> - watch 추가는 work/watchDirWork.js 에서 실행
