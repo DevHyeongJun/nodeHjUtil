@@ -14,10 +14,13 @@ module.exports = Utils = {
     },
     
     convertYMD : (date) => {
+        
+        date.setMonth(date.getMonth()+1);
 
         const yy = date.getFullYear();
         const mm = date.getMonth() >= 10 ? date.getMonth() : `0${date.getMonth()}`;
-        const dd = date.getDay() >= 10 ? date.getDay() : `0${date.getDay()}`;
+
+        const dd = date.getDate() >= 10 ? date.getDate() : `0${date.getDate()}`;
 
         return `${yy}-${mm}-${dd}`;
     }

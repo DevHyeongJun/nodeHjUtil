@@ -6,7 +6,7 @@ module.exports = GlobalConfig = {
 
     file : {
         nate : {
-            toFilePath : 'C:/Users/ROG/Documents/네이트온 받은 파일/',
+            toFilePath : 'C:/Users/ROG/Documents/네이트온 받은 파일',
             fromFilePath : 'D:/다운로드 받은 파일/네이트온'
         },
         web : {

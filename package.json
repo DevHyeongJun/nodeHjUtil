@@ -5,16 +5,20 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "fileMove": "node ./work/fileWork.js",
+    "watchDir": "node ./work/watchDirWork.js",
+    "svnWork": "node ./work/svnWork.js",
     "service": "node ./serviceStart.js"
   },
   "keywords": [],
-  "author": "ahj",
+  "author": "ROG",
   "license": "ISC",
   "dependencies": {
+    "@author.io/arg": "^1.3.23",
     "fs": "^0.0.1-security",
     "fs-extra": "^10.1.0",
     "ncp": "^2.0.0",
-    "node-windows": "^1.0.0-beta.6"
+    "node-svn-ultimate": "^1.2.1",
+    "node-windows": "^1.0.0-beta.6",
+    "npm-watch": "^0.11.0"
   }
 }

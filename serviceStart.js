@@ -1,5 +1,5 @@
 const Service = require('node-windows').Service;
-const dir = require('path').join(process.cwd(), '/work/fileWork.js')
+const dir = require('path').join(process.cwd(), '/work/watchDirWork.js')
 
 const params = process.argv.slice(2);
 
