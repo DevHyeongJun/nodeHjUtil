@@ -19,6 +19,7 @@
     "ncp": "^2.0.0",
     "node-svn-ultimate": "^1.2.1",
     "node-windows": "^1.0.0-beta.6",
-    "npm-watch": "^0.11.0"
+    "npm-watch": "^0.11.0",
+    "svn-spawn": "^0.1.6"
   }
 }
