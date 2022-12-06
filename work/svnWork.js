@@ -7,10 +7,13 @@ const { exec, execSync } = require("child_process");
 
 const fs = require("fs-extra");
 
-var svnUrl = 'http://10.1.73.15:18080/svn/xeus-smartcity/xeus-smartcity-seoul-police/public/xeus-seoul-police-public/';
-var targetDir = 'D:/work';
+//경찰청 var svnUrl = 'http://10.1.73.15:18080/svn/xeus-smartcity/xeus-smartcity-seoul-police/public/xeus-seoul-police-public/';
 
-var command = `svn checkout ${svnUrl} ${targetDir}`;
+//환동해
+const svnUrl = 'http://10.1.73.15:18080/svn/xeus-platform/xeus-gangwon-hwandonghae-v2/';
+const targetDir = 'D:/work';
+
+const command = `svn checkout ${svnUrl} ${targetDir}`;
 
 const initWorkDir = () => {
     //폴더
@@ -56,7 +59,3 @@ const execMavenBuild = () => {
 //initWorkDir();
 //execSvnCheckOut();
 execMavenBuild();
-
-
-
-
