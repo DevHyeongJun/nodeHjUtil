@@ -2,31 +2,21 @@ const Utils = require('../../util/Utils.js');
 
 const fs = require("fs-extra");
 
-module.exports = fileMoveWork = (toPath, fromPath) => {
+module.exports = fileMoveWork = (toPath, fromPath, isDelete) => {
  
   try {
-    //1. 목록 정보 추출
-    const filelist = fs.readdirSync(toPath);//, (err, filelist) => {
-
-    //2. 목록 상세 정보 가져오기
-    filelist.forEach(function(file) {
-
-      const to = `${toPath}/${file}`;
-      //3. 파일 정보 추출
-      const stats = fs.statSync(to);//, function (statErr, stats) {
-      const createDate = Utils.getDate(new Date( stats.birthtimeMs ));
-
-      const from = `${dirDateFolderName(createDate, fromPath)}/${file}`;
-      
-      //4. 파일 복사
-      fs.copySync(to, from); //{clobber : true}, function (ncpErr) {
-
-      //if (ncpErr) return console.error(ncpErr);
-      //5. 잔여 폴더 파일 삭제
-      removeFileNFolder(to, stats);
- 
-    });
     
+    if ( isDelete ) {
+      removeFileNFolders(fromPath);
+    }
+
+    const to = `${toPath}`;
+
+    const from = `${fromPath}/xeus.war`;
+      
+	  //파일 복사
+	  fs.copySync(to, from); //{clobber : true}, function (ncpErr) {
+   
   } catch(e) {
     console.log(e);
   }
@@ -44,13 +34,34 @@ const dirDateFolderName = (date, from) => {
   
 }
 
-const removeFileNFolder = async (target, stats) => {
+const removeFileNFolder = async (target) => {
   
-  console.log(target);
   //fs.removeSync(target);//, (err) =>{
   
   if ( fs.existsSync(target) ) {
     fs.removeSync(target);
   }
 
+}
+
+
+const removeFileNFolders = async (fromPath) => {
+  
+  try {
+    
+    //1. 목록 정보 추출
+    const filelist = fs.readdirSync(fromPath);//, (err, filelist) => {
+
+    //2. 목록 상세 정보 가져오기
+    filelist.forEach(function(file) {
+      if ( file !== 'ROOT') {
+        const to = `${fromPath}/${file}`;
+        removeFileNFolder(to);
+
+      }
+    });
+    
+  } catch(e) {
+    console.log(e);
+  }
 }
