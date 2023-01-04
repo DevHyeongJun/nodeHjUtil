@@ -6,15 +6,15 @@ module.exports = fileMoveWork = (toPath, fromPath, isDelete) => {
  
   try {
     
-    if ( isDelete ) {
-      removeFileNFolders(fromPath);
-    }
+    //1. 목록 정보 추출
+	//  const filelist = fs.readdirSync(toPath);//, (err, filelist) => {
 
-    const to = `${toPath}`;
+	const to = `${toPath}`;
 
-    const from = `${fromPath}/xeus.war`;
-      
-	  //파일 복사
+	const from = `${fromPath}/xeus.war`;
+	    
+	removeFileNFolders(fromPath);
+	  //3. 파일 복사
 	  fs.copySync(to, from); //{clobber : true}, function (ncpErr) {
    
   } catch(e) {
@@ -25,6 +25,7 @@ module.exports = fileMoveWork = (toPath, fromPath, isDelete) => {
 const dirDateFolderName = (date, from) => {
 //
   //const date = Utils.getDate(_date);
+
   const ymd = Utils.convertYMD(date);
   const dirPath = `${from}/${ymd}`;
   
@@ -44,7 +45,6 @@ const removeFileNFolder = async (target) => {
 
 }
 
-
 const removeFileNFolders = async (fromPath) => {
   
   try {
@@ -57,7 +57,6 @@ const removeFileNFolders = async (fromPath) => {
       if ( file !== 'ROOT') {
         const to = `${fromPath}/${file}`;
         removeFileNFolder(to);
-
       }
     });
     

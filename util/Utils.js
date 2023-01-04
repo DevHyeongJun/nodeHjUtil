@@ -1,4 +1,5 @@
 module.exports = Utils = {
+	
     getDate : (date) => {
         // 1. 현재 시간(Locale)
         const curr = date||new Date();
@@ -13,6 +14,19 @@ module.exports = Utils = {
         return kr_curr;
     },
     
+	getToday : () => {
+		
+		const today = new Date();
+		const year = today.getFullYear(); 
+		const month = today.getMonth() + 1;
+		const date = today.getDate(); // 일
+		const h24 = today.getHours();
+		const min = today.getMinutes();
+		const sec = today.getSeconds();
+		
+		return `${year}-${month}-${date} ${h24}:${min}:${sec}`;
+	},
+	
     convertYMD : (date) => {
         
         date.setMonth(date.getMonth()+1);
@@ -23,5 +37,21 @@ module.exports = Utils = {
         const dd = date.getDate() >= 10 ? date.getDate() : `0${date.getDate()}`;
 
         return `${yy}-${mm}-${dd}`;
-    }
+    },
+	
+	loggerMsg : (msg, typ) => {
+		
+		const prevStr = '>>>>>>>>>>>>>>>>>';
+		msg = `[${Utils.getToday()}]${prevStr} ${msg}`;
+		switch(typ) {
+			case 'err' :
+				msg = `[error] ${msg}`;
+			break;
+			default	:
+				msg = `[info] ${msg}`;
+			break;
+		}
+		
+		console.log( msg);
+	}
 }

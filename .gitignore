@@ -6,3 +6,4 @@ work/daemon
 daemon
 modules
 svnwork
+config.js
