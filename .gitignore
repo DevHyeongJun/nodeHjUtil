@@ -4,6 +4,6 @@ test
 shp
 work/daemon
 daemon
-modules
+modules/maven
 svnwork
 config.js
